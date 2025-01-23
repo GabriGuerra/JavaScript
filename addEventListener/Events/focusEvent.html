@@ -1,0 +1,15 @@
+<input type="text" id="textInput" placeholder="Click here">
+<script>
+  const textInput = document.getElementById('textInput');
+
+  textInput.addEventListener('focus', function() {
+    console.log('Input focused');
+  });
+  textInput.addEventListener('blur', function() {
+    console.log('Input blurred');
+  });
+</script>
+
+<!-- Code explanation -->
+<!-- The code creates a text input in HTML with placeholder text and adds 'Focus' and 'blur' event listeners to the input. When the input gains focus, the 'focus' listener logs 'Input focused', 
+ and when it loses focus, the 'blur' listener logs 'Input blurred' to the console -->

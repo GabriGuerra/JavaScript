@@ -1,0 +1,15 @@
+<input type="text" id="keyInput">
+<script>
+  const keyInput = document.getElementById('keyInput');
+
+  keyInput.addEventListener('keydown', function() {
+    console.log('Key pressed down!');
+  });
+  keyInput.addEventListener('keyup', function() {
+    console.log('Key released!');
+  });
+</script>
+
+<!-- Code explanation -->
+<!-- The code includes creating an HTML <input> field named keyInput and adding event listeners for both 'keydown' and 'keyup' events to this input field. Whenever a user presses a key within the input field, the console logs the message 'Key pressed down!'.
+Similarly, upon releasing the key, the console logs 'Key released!' -->

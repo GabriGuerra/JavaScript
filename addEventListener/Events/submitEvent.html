@@ -1,0 +1,16 @@
+
+  <input type="text" id="textInput">
+  <input type="submit" value="Submit">
+</form>
+<script>
+  document.getElementById('myForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevents the default form submission behavior
+    console.log('Form submitted!');
+  });
+</script>
+
+
+
+<!-- Code explanation -->
+<!-- The code establishes an HTML form with a text input and a submit button. An event listener on the form captures the 'submit' event.
+ Upon submission, the listener triggers a function preventing default behavior and logging 'Form submitted!' to the console -->
