@@ -1,26 +1,29 @@
 function showweatherDetails(event) {
     event.preventDefault();
-    const city = document.getElementById('city').value;
+    const lat = document.getElementById('lat').value;
+    const lon = document.getElementById('lon').value;
     const apiKey = '76e746058325abd636b0936e8b0f4afa';
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    const apiUrl = `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=5&appid=${apiKey}`;
 
 
 fetch(apiUrl)
 .then(response => response.json())
 .then(data => {
-  const weatherInfo = document.getElementById('weatherInfo');
-  weatherInfo.innerHTML = `<h2>Weather in ${data.name}</h2>
-                          <p>Temperature: ${data.main.temp} &#8451;</p>
-                          <p>Weather: ${data.weather[0].description}</p>`;
+    const weatherInfo = document.getElementById('locationInfo');
+    console.log(data);
+    weatherInfo.innerHTML = `<h2>${data[0].name}</h2>
+                            <p>lat: ${data[0].lat}</p>
+                            <p>lon: ${data[0].lon}</p>
+                            <p>country: ${data[0].country}</p>`;
 })
 
 .catch(error => {
-    console.error('Error fetching weather:', error);
-    const weatherInfo = document.getElementById('weatherInfo');
-    weatherInfo.innerHTML = `<p>Failed to fetch weather. Please try again.</p>`;
+    console.error('Error fetching location:', error);
+    const weatherInfo = document.getElementById('locationInfo');
+    weatherInfo.innerHTML = `<p>Failed to fetch location. Please try again.</p>`;
   });
 
 
 
-}
-document.getElementById('weatherForm').addEventListener('submit',showweatherDetails );
+}       
+document.getElementById('locationForm').addEventListener('submit',showweatherDetails );
