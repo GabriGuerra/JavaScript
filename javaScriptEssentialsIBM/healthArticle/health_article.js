@@ -1,7 +1,7 @@
 var xhr = new XMLHttpRequest();
-var url = health_article.json;
+var url = 'health_article.json';
 var url2 = 'https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-JS0101EN-SkillsNetwork/health.json';
-xhr.open('GET', url, true);
+xhr.open('GET', url2, true);
 xhr.responseType = 'json';
 
 xhr.onload = function() {
